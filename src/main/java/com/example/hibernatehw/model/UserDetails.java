@@ -1,6 +1,7 @@
-package org.example.model;
+package com.example.hibernatehw.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

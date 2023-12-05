@@ -1,9 +1,9 @@
-package org.example.service;
+package com.example.hibernatehw.service;
 
-import org.example.model.Mobile;
-import org.example.model.UserDetails;
-import org.example.model.Vehicle;
-import org.example.repository.UserRepository;
+import com.example.hibernatehw.model.Mobile;
+import com.example.hibernatehw.model.UserDetails;
+import com.example.hibernatehw.model.Vehicle;
+import com.example.hibernatehw.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,24 +20,12 @@ public class UserService implements UserRepository {
         return listOfAllUsers;
     }
 
-    public List<Vehicle> getUserVehicles(UserDetails userDetails) {
-        for (UserDetails user : listOfAllUsers) {
-            if (userDetails.getId() == user.getId()) {
-                return user.getVehicles();
-            }
-        }
-
-        return null;
+    public List<Mobile> getUserMobiles(UserDetails userDetails) {
+        return userDetails.getMobiles();
     }
 
-    public List<Mobile> getUserMobiles(UserDetails userDetails) {
-        for (UserDetails user : listOfAllUsers) {
-            if (userDetails.getId() == user.getId()) {
-                return user.getMobiles();
-            }
-        }
-
-        return null;
+    public List<Vehicle> getUserVehicles(UserDetails userDetails) {
+        return userDetails.getVehicles();
     }
 
     public void addNewUser(UserDetails user) {
@@ -59,4 +47,12 @@ public class UserService implements UserRepository {
             }
         }
     }
-}
+
+    public UserDetails getUserByUsername(String username) {
+        for (UserDetails user : listOfAllUsers) {
+            if (user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }}

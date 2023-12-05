@@ -1,4 +1,4 @@
-package org.example.model;
+package com.example.hibernatehw.model;
 
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;

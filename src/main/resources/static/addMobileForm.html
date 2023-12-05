@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Mobile</title>
+</head>
+<body>
+<h1>Add Mobile</h1>
+<form th:action="@{/users/addMobile/{username}}" th:object="${mobile}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" required>
+    <button type="submit">Add Mobile</button>
+</form>
+</body>
+</html>
